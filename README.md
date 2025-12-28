@@ -31,3 +31,51 @@
 ```bash
 git clone https://github.com/bilgambuyu/ai-log-analyzer.git
 cd ai-log-analyzer
+
+
+## Open the App
+
+Simply open the index.html in your browser:
+open index.html
+
+Folder Structure
+
+ai-log-analyzer/
+│
+├─ index.html
+├─ scripts/
+│   └─ analyzer.js
+├─ styles/
+│   └─ style.css
+├─ kb/
+│   └─ knowledge_base.js
+├─ logs/
+│   └─ sample log files
+└─ assets/
+    └─ screenshots/icons
+
+How It Works
+
+1. Upload log files from your computer.
+2. The app parses timestamps, log levels, and messages.
+3. Each log message is checked against the knowledge base rules.
+4. Insights are displayed in a table with suggested fixes.
+5. Filter, search, or export logs as needed.
+
+Knowledge Base
+
+The knowledge base is stored in kb/knowledge_base.js.
+Each rule has:
+- Pattern: regex to match log messages
+- Explanation: plain-text description
+- Fix: suggested action for the issue
+Users can expand or edit the knowledge base to include custom patterns.
+
+Future Enhancements
+
+- Real-time log monitoring
+- Hybrid offline AI for advanced insights
+- Interactive timeline charts
+- Alerts for critical errors
+- Log correlation and pattern detection
+
