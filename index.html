@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Log Analyzer</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="kb/knowledge_base.js"></script>
+    <script src="scripts/analyzer.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h2>AI-Powered Log Analyzer</h2>
+    <button onclick="toggleDarkMode()">🌙 / 🌞</button>
+</header>
+
+<main>
+    <div class="panel">
+        <input type="file" id="fileInput" multiple>
+        <input type="text" id="search" placeholder="Search logs..." oninput="applyFilters()">
+        <select id="levelFilter" onchange="applyFilters()">
+            <option value="">All Levels</option>
+            <option>INFO</option>
+            <option>WARNING</option>
+            <option>ERROR</option>
+            <option>DEBUG</option>
+        </select>
+        <button onclick="exportCSV()">Export CSV</button>
+    </div>
+
+    <div class="panel" id="stats"></div>
+
+    <div class="panel">
+        <canvas id="levelChart" width="300" height="150"></canvas>
+    </div>
+
+    <div class="panel">
+        <table>
+            <thead>
+                <tr><th>Time</th><th>Level</th><th>Message</th><th>Insight</th></tr>
+            </thead>
+            <tbody id="logTable"></tbody>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>
